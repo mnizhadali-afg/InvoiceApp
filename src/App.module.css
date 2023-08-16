@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(var(--clr-light-100));
+}
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+button {
+  outline: none;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.5rem;
+}
+/********* Scroll bar *******/
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width of the scrollbar track */
+  cursor: pointer;
+}
+/* Customize the scrollbar thumb (scroll handle) */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(var(--clr-light-400), 0.6);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(var(--clr-light-400), 0.6);
+}

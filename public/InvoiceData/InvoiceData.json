@@ -1,0 +1,284 @@
+[
+  {
+    "billFrom": {
+      "street": "454 Street",
+      "city": "Kabul",
+      "postCode": "1001",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "Max",
+      "clientEmail": "max@mail.com",
+      "clientStreet": "989 Stuttgart",
+      "clientCity": "Stuttgart",
+      "clientCountry": "Germany"
+    },
+    "invoiceDate": "2019-01-01",
+    "paymentTerms": "90",
+    "projectDescription": "Great!",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "2",
+        "price": "90",
+        "totalPrice": 180
+      }
+    ],
+    "grandTotal": 180
+  },
+  {
+    "billFrom": {
+      "street": "454 Street",
+      "city": "Kabul",
+      "postCode": "1001",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "Max",
+      "clientEmail": "max@mail.com",
+      "clientStreet": "989 Stuttgart",
+      "clientCity": "Stuttgart",
+      "clientCountry": "Germany"
+    },
+    "invoiceDate": "2019-01-01",
+    "paymentTerms": "90",
+    "projectDescription": "Great!",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "2",
+        "price": "90",
+        "totalPrice": 180
+      },
+      {
+        "item": "Figma File",
+        "qty": "2",
+        "price": "600",
+        "totalPrice": 1200
+      }
+    ],
+    "grandTotal": 1380
+  },
+  {
+    "billFrom": {
+      "street": "Darul Aman Street",
+      "city": "Kabul",
+      "postCode": "10014",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "Maximilano",
+      "clientEmail": "maxim@max.com",
+      "clientStreet": "Jan Luigi Buffon Str. 10",
+      "clientCity": "Roma",
+      "clientCountry": "Italy"
+    },
+    "invoiceDate": "2023-08-22",
+    "paymentTerms": "30",
+    "projectDescription": "Alles Gute. Happy using our servies.",
+    "items": [
+      {
+        "item": "Graphic Pack",
+        "qty": "2",
+        "price": "120",
+        "totalPrice": 240
+      },
+      {
+        "item": "Icons",
+        "qty": "50",
+        "price": "2",
+        "totalPrice": 100
+      },
+      {
+        "item": "Logo",
+        "qty": "2",
+        "price": "90",
+        "totalPrice": 180
+      },
+      {
+        "item": "Styles",
+        "qty": "10",
+        "price": "75",
+        "totalPrice": 750
+      }
+    ],
+    "grandTotal": 1270
+  },
+  {
+    "billFrom": {
+      "street": "123 Street",
+      "city": "Kabul",
+      "postCode": "10001",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "John",
+      "clientEmail": "john@mail.com",
+      "clientStreet": "123 Street London",
+      "clientCity": "London",
+      "clientCountry": "UK"
+    },
+    "invoiceDate": "2023-08-24",
+    "paymentTerms": "90",
+    "projectDescription": "Very nice!!",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "2",
+        "price": "200",
+        "totalPrice": 400
+      },
+      {
+        "item": "Figma File",
+        "qty": "5",
+        "price": "140",
+        "totalPrice": 700
+      }
+    ],
+    "grandTotal": 1100
+  },
+  {
+    "billFrom": {
+      "street": "64534",
+      "city": "Ghazni",
+      "postCode": "2001",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "Julia",
+      "clientEmail": "julia@mail.com",
+      "clientStreet": "1231 Julia Street",
+      "clientCity": "Dusseldurf",
+      "clientCountry": "Germany"
+    },
+    "invoiceDate": "2024-11-29",
+    "paymentTerms": "90",
+    "projectDescription": "Please pay your bills",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "2",
+        "price": "200",
+        "totalPrice": 400
+      }
+    ],
+    "grandTotal": 400
+  },
+  {
+    "billFrom": {
+      "street": "123 street",
+      "city": "Kabul",
+      "postCode": "1001",
+      "country": "Afghanistan"
+    },
+    "billTo": {
+      "clientName": "Ahmad",
+      "clientEmail": "ahmad@mail.com",
+      "clientStreet": "123 Paris",
+      "clientCity": "Paris",
+      "clientCountry": "France"
+    },
+    "invoiceDate": "2023-02-01",
+    "paymentTerms": "60",
+    "projectDescription": "Alles Gute",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "2",
+        "price": "500",
+        "totalPrice": 1000
+      }
+    ],
+    "grandTotal": 1000
+  },
+  {
+    "billFrom": {
+      "street": "Holfenstrasse",
+      "city": "Munich",
+      "postCode": "81241",
+      "country": "Germany"
+    },
+    "billTo": {
+      "clientName": "Moritz Bauer",
+      "clientEmail": "moritz@bauer.com",
+      "clientStreet": "Marienplatz",
+      "clientCity": "Munich",
+      "clientCountry": "Germany"
+    },
+    "invoiceDate": "2022-10-05",
+    "paymentTerms": "90",
+    "projectDescription": "Please receive the invoice for your payments.",
+    "items": [
+      {
+        "item": "",
+        "qty": "2",
+        "price": "235",
+        "totalPrice": 470
+      },
+      {
+        "item": "",
+        "qty": "5",
+        "price": "125",
+        "totalPrice": 625
+      },
+      {
+        "item": "",
+        "qty": "120",
+        "price": "25",
+        "totalPrice": 3000
+      },
+      {
+        "item": "",
+        "qty": "10",
+        "price": "2000",
+        "totalPrice": 20000
+      },
+      {
+        "item": "",
+        "qty": "230",
+        "price": "1205",
+        "totalPrice": 277150
+      }
+    ],
+    "grandTotal": 301245
+  },
+  {
+    "billFrom": {
+      "street": "123 Street",
+      "city": "London",
+      "postCode": "1001",
+      "country": "UK"
+    },
+    "billTo": {
+      "clientName": "Jack",
+      "clientEmail": "bauer@jack.com",
+      "clientStreet": "123 Jack Street",
+      "clientCity": "Munich",
+      "clientCountry": "Germany"
+    },
+    "invoiceDate": "2023-08-31",
+    "paymentTerms": "120",
+    "projectDescription": "Something here.",
+    "items": [
+      {
+        "item": "Banner",
+        "qty": "1",
+        "price": "200",
+        "totalPrice": 200
+      },
+      {
+        "item": "Logo",
+        "qty": "2",
+        "price": "100",
+        "totalPrice": 200
+      },
+      {
+        "item": "Figma File",
+        "qty": "3",
+        "price": "125",
+        "totalPrice": 375
+      }
+    ],
+    "grandTotal": 775
+  }
+]

@@ -1,0 +1,47 @@
+.invoiceItem {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
+  margin-bottom: 1rem;
+}
+.invoiceItem:hover {
+  cursor: pointer;
+}
+.firstSection {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+.invoiceId::before {
+  content: "#";
+  color: rgb(var(--clr-light-300));
+  font-weight: 700;
+}
+.invoiceId,
+.textBold {
+  font-weight: 700;
+}
+.textLight {
+  color: rgb(var(--clr-light-300));
+}
+.secondSection {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+.status::before {
+  content: url("./images/oval.svg");
+  margin-right: 0.5rem;
+}
+.status {
+  background-color: rgba(var(--clr-status-paid), 0.2);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: rgb(var(--clr-status-paid));
+}

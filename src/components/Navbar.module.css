@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-start: 5rem;
+  padding-block-end: 2rem;
+}
+nav header {
+  display: flex;
+  flex-direction: column;
+}
+.navRightSide {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.filterIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.newInvoice {
+  background-color: rgb(var(--clr-dark-100));
+  color: rgb(var(--clr-light-100));
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0px 10px 10px -10px rgba(var(--clr-dark-100), 0.75);
+}
+.plusIcon {
+  background-color: rgb(var(--clr-light-100));
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0.25rem;
+}
+strong {
+  color: red;
+  font-size: 1.4rem;
+}

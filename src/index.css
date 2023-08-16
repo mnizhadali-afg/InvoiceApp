@@ -1,0 +1,85 @@
+:root {
+  /* Branding Colors */
+  --clr-light-100: 248, 248, 251;
+  --clr-light-200: 223, 227, 250;
+  --clr-light-300: 126, 136, 195;
+  --clr-light-400: 136, 142, 176;
+  --clr-light-500: 255, 151, 151;
+  --clr-light-600: 146, 119, 255;
+
+  --clr-dark-100: 124, 93, 250;
+  --clr-dark-200: 37, 41, 69;
+  --clr-dark-300: 30, 33, 57;
+  --clr-dark-400: 12, 14, 22;
+  --clr-dark-500: 20, 22, 37;
+  --clr-dark-600: 236, 87, 87;
+
+  --clr-status-paid: 51, 214, 159;
+  --clr-status-pending: 255, 143, 0;
+  --clr-status-draft: 55, 59, 83;
+
+  font-family: "League Spartan", sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
