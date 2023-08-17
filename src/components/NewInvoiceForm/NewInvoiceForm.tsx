@@ -136,7 +136,7 @@ const NewInvoiceForm = () => {
 
             {/* TODO: Buttons in Footer */}
             <div className={styles.buttonGroup}>
-              <Button type="reset" value="Discard" onClick={closeModal} />
+              <Button type="button" value="Discard" onClick={closeModal} />
 
               <div>
                 <Button
