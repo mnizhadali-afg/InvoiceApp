@@ -1,5 +1,4 @@
 import InputElement from "./InputElement"
-import Button from "../Button"
 import "./NewInvoiceForm.css"
 
 function closeModal() {
@@ -247,10 +246,12 @@ const NewInvoiceForm = () => {
 
             {/* TODO: Buttons in Footer */}
             <div className="buttonGroup">
-              <Button value="Discard" onClick={closeModal} />
+              <button type="button" onClick={closeModal}>
+                Discard
+              </button>
               <div>
-                <Button value="Save as Draft" />
-                <Button value="Save & Send" />
+                <button type="button">Save as Draft</button>
+                <button type="reset">Save & Send</button>
               </div>
             </div>
           </div>
