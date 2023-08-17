@@ -1,6 +1,20 @@
 import styles from "./InputElement.module.css"
 
-const InputElement = ({ htmlFor, type, name, id, value }) => {
+interface InputElementProps {
+  htmlFor: string
+  type: string
+  name: string
+  id: string
+  value: string
+}
+
+const InputElement: React.FC<InputElementProps> = ({
+  htmlFor,
+  type,
+  name,
+  id,
+  value,
+}) => {
   return (
     <div className={styles.formElement}>
       <label htmlFor={htmlFor}>{value}</label>
