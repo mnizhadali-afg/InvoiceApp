@@ -2,10 +2,12 @@ import InputElement from "./InputElement"
 import Button from "../Button"
 import styles from "./NewInvoiceForm.module.css"
 
-// function closeModal() {
-//   const invoiceForm = document.querySelector("#newInvoice")
-//   invoiceForm.style.display = "none"
-// }
+function closeModal() {
+  const invoiceForm = document.querySelector("#newInvoice")
+  invoiceForm.style.display = "none"
+}
+
+const showHello = () => console.log("Hello")
 
 const NewInvoiceForm = () => {
   return (
@@ -134,11 +136,14 @@ const NewInvoiceForm = () => {
 
             {/* TODO: Buttons in Footer */}
             <div className={styles.buttonGroup}>
-              <button type="reset" className={styles.discardButton}>
-                Discard
-              </button>
+              <Button type="reset" value="Discard" onClick={closeModal} />
+
               <div>
-                <Button type="button" value="Save as Draft" />
+                <Button
+                  type="button"
+                  value="Save as Draft"
+                  onClick={showHello}
+                />
                 <Button type="submit" value="Save & Send" />
               </div>
             </div>

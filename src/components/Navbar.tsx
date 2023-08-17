@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css"
 
-function showModal() {
+const showModal = () => {
   const invoiceForm = document.querySelector("#newInvoice")
   invoiceForm.style.display = "block"
 }
