@@ -1,10 +1,54 @@
 import InputElement from "./InputElement"
 import Button from "../Button"
-import styles from "./NewInvoiceForm.module.css"
+import "./NewInvoiceForm.css"
 
 function closeModal() {
   const invoiceForm = document.querySelector("#newInvoice")
   invoiceForm.style.display = "none"
+}
+
+const addNewItem = () => {
+  const itemsContainer = document.getElementById("itemsContainer")
+  const itemRow = document.querySelector(".itemList")
+
+  // Clone the first item row
+  const clonedItemRow = itemRow.cloneNode(true)
+
+  // Clear the values in the cloned input fields
+  clonedItemRow.querySelectorAll("input").forEach((input) => (input.value = ""))
+
+  // Add the cloned item row to the container
+  itemsContainer.appendChild(clonedItemRow)
+
+  // Attach event listeners to the cloned input fields
+  clonedItemRow.querySelector(".item").addEventListener("input", calculateTotal)
+  clonedItemRow.querySelector(".qty").addEventListener("input", calculateTotal)
+  clonedItemRow
+    .querySelector(".price")
+    .addEventListener("input", calculateTotal)
+}
+
+function calculateTotal() {
+  const itemRows = document.querySelectorAll(".item-row")
+  let grandTotal = 0
+
+  itemRows.forEach((itemRow) => {
+    const quantity = parseFloat(itemRow.querySelector(".qty").value)
+    const price = parseFloat(itemRow.querySelector(".price").value)
+    const totalPriceSpan = itemRow.querySelector(".totalPrice")
+
+    if (!isNaN(quantity) && !isNaN(price)) {
+      const total = quantity * price
+      totalPriceSpan.value = "$" + total.toFixed(2)
+      grandTotal += total
+    } else {
+      totalPriceSpan.value = "$0.00"
+    }
+  })
+
+  // Update the grand total
+  const grandTotalSpan = document.getElementById("grandTotal")
+  grandTotalSpan.textContent = "$" + grandTotal.toFixed(2)
 }
 
 const showHello = () => console.log("Hello")
@@ -12,12 +56,12 @@ const showHello = () => console.log("Hello")
 const NewInvoiceForm = () => {
   return (
     <>
-      <div id="newInvoice" className={styles.newInvoiceFormModal}>
-        <form className={styles.newInvoiceForm}>
+      <div id="newInvoice" className="newInvoiceFormModal">
+        <form className="newInvoiceForm">
           <h2>New Invoice</h2>
-          <div className={styles.formScrollable}>
+          <div className="formScrollable">
             {/* TODO: Bill From */}
-            <div className={styles.billFrom}>
+            <div className="billFrom">
               <h3>Bill From</h3>
               <InputElement
                 htmlFor="companyAddress"
@@ -26,7 +70,7 @@ const NewInvoiceForm = () => {
                 id="companyAddress"
                 value="Company Address"
               />
-              <div className={styles.address}>
+              <div className="address">
                 <InputElement
                   htmlFor="companyCity"
                   type="text"
@@ -52,7 +96,7 @@ const NewInvoiceForm = () => {
             </div>
 
             {/* TODO: Bill To */}
-            <div className={styles.billTo}>
+            <div className="billTo">
               <h3>Bill To</h3>
               <InputElement
                 htmlFor="clientName"
@@ -76,7 +120,7 @@ const NewInvoiceForm = () => {
                 value="Street Address"
               />
 
-              <div className={styles.address}>
+              <div className="address">
                 <InputElement
                   htmlFor="clientCity"
                   type="text"
@@ -102,7 +146,7 @@ const NewInvoiceForm = () => {
             </div>
 
             {/* TODO: Invoice Due Date, Invoice Terms,  */}
-            <div className={styles.dateTerms}>
+            <div className="dateTerms">
               <InputElement
                 htmlFor="issueDate"
                 type="date"
@@ -130,14 +174,80 @@ const NewInvoiceForm = () => {
             />
 
             {/* TODO: Adding Items */}
-            <div className={styles.ItemList}>
+            <div id="itemsContainer">
               <h3>Item List</h3>
+              <div>
+                <div className="itemListlabels">
+                  <label>Item Name</label>
+                  <label>Qty.</label>
+                  <label>Price</label>
+                  <label>Total Price</label>
+                  {/* <label>Action</label> */}
+                </div>
+                {/* TODO: Item Row */}
+                <div id="itemsContainer" className="itemsContainer">
+                  <div className="item-row">
+                    <input
+                      type="text"
+                      name="item[]"
+                      placeholder="Item name"
+                      className="item"
+                      onInput={calculateTotal}
+                    />
+                    <input
+                      type="number"
+                      name="qty[]"
+                      placeholder="0"
+                      className="qty"
+                      onInput={calculateTotal}
+                    />
+                    <input
+                      type="number"
+                      name="price[]"
+                      className="price"
+                      placeholder="00.0"
+                      onInput={calculateTotal}
+                    />
+                    <input
+                      type="text"
+                      className="totalPrice"
+                      id="totalPrice"
+                      placeholder="$00.00"
+                      disabled
+                    />
+                    <input
+                      type="hidden"
+                      name="totalPrice[]"
+                      id="hiddenTotalPrice"
+                    />
+                    <img
+                      src="images/delete_icon.svg"
+                      alt="delete icon"
+                      className="deleteIcon"
+                    />
+                  </div>
+                </div>
+                <label className="grandTotalLabel">
+                  Grand Total:{" "}
+                  <span id="grandTotal" className="grandTotalSpan">
+                    $0.00
+                  </span>
+                </label>
+                <input type="hidden" name="grandTotal" id="hiddenGrandTotal" />
+                <button
+                  type="button"
+                  name="button"
+                  className="btn btn-success"
+                  onClick={addNewItem}
+                >
+                  Add New Item
+                </button>
+              </div>
             </div>
 
             {/* TODO: Buttons in Footer */}
-            <div className={styles.buttonGroup}>
+            <div className="buttonGroup">
               <Button type="button" value="Discard" onClick={closeModal} />
-
               <div>
                 <Button
                   type="button"

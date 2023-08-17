@@ -1,3 +1,4 @@
+/* TODO: New Invioce Form */
 .newInvoiceFormModal {
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -39,6 +40,29 @@
 .dateTerms > * {
   width: 100%;
 }
+/* TODO: Item List Input Elements */
+.itemListlabels,
+.item-row {
+  display: grid;
+  grid-template-columns: 3fr 80px repeat(2, 120px) 30px;
+  gap: 0.5rem;
+}
+.item-row > * {
+  font-size: 1rem !important;
+}
+.totalPrice {
+  height: 46px;
+}
+.deleteIcon {
+  width: 20px;
+  height: 20px;
+  margin-block: 0.75rem;
+  margin: 0.75rem auto;
+}
+.deleteIcon:hover {
+  cursor: pointer;
+}
+/* TODO: Footer Button Group */
 .buttonGroup {
   display: flex;
   position: absolute;
