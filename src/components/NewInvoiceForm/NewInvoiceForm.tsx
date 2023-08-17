@@ -246,7 +246,11 @@ const NewInvoiceForm = () => {
 
             {/* TODO: Buttons in Footer */}
             <div className="buttonGroup">
-              <button type="button" onClick={closeModal}>
+              <button
+                type="button"
+                className="discardButton"
+                onClick={closeModal}
+              >
                 Discard
               </button>
               <div>
