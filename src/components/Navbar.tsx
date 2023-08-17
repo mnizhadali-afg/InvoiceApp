@@ -1,11 +1,17 @@
+import { useState } from "react"
 import styles from "./Navbar.module.css"
 
-const showModal = () => {
-  const invoiceForm = document.querySelector("#newInvoice")
-  invoiceForm.style.display = "block"
-}
-
 const Navbar = () => {
+  const [showFormModal, setShowFormModal] = useState(false)
+
+  const showModal = () => {
+    const invoiceForm = document.querySelector("#newInvoice") as HTMLElement
+    if (invoiceForm) {
+      invoiceForm.style.display = "block"
+      setShowFormModal(true)
+    }
+  }
+
   return (
     <nav>
       <header>
