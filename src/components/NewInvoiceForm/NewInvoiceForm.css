@@ -41,17 +41,17 @@
   width: 100%;
 }
 /* TODO: Item List Input Elements */
+#itemsContainer h3 {
+  margin-top: 1rem;
+}
 .itemListlabels,
 .item-row {
   display: grid;
   grid-template-columns: 3fr 80px repeat(2, 120px) 30px;
   gap: 0.5rem;
 }
-.item-row > * {
-  font-size: 1rem !important;
-}
 .totalPrice {
-  height: 46px;
+  font-weight: 700;
 }
 .deleteIcon {
   width: 20px;
@@ -61,6 +61,18 @@
 }
 .deleteIcon:hover {
   cursor: pointer;
+}
+.grandTotalButton {
+  width: 100%;
+  box-shadow: 0px 0px 10px 3px rgba(var(--clr-dark-200), 0.1);
+}
+.grandTotalLabel {
+  margin-block: 1rem;
+  font-size: 1.5rem;
+  color: rgb(var(--clr-dark-200));
+}
+.grandTotalLabel span {
+  font-weight: 700;
 }
 /* TODO: Footer Button Group */
 .buttonGroup {

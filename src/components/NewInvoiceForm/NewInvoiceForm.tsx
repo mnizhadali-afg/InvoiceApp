@@ -9,7 +9,7 @@ function closeModal() {
 
 const addNewItem = () => {
   const itemsContainer = document.getElementById("itemsContainer")
-  const itemRow = document.querySelector(".itemList")
+  const itemRow = document.querySelector(".item-row")
 
   // Clone the first item row
   const clonedItemRow = itemRow.cloneNode(true)
@@ -28,7 +28,7 @@ const addNewItem = () => {
     .addEventListener("input", calculateTotal)
 }
 
-function calculateTotal() {
+const calculateTotal = () => {
   const itemRows = document.querySelectorAll(".item-row")
   let grandTotal = 0
 
@@ -50,8 +50,6 @@ function calculateTotal() {
   const grandTotalSpan = document.getElementById("grandTotal")
   grandTotalSpan.textContent = "$" + grandTotal.toFixed(2)
 }
-
-const showHello = () => console.log("Hello")
 
 const NewInvoiceForm = () => {
   return (
@@ -190,7 +188,7 @@ const NewInvoiceForm = () => {
                     <input
                       type="text"
                       name="item[]"
-                      placeholder="Item name"
+                      placeholder="e.g. Banner"
                       className="item"
                       onInput={calculateTotal}
                     />
@@ -212,7 +210,7 @@ const NewInvoiceForm = () => {
                       type="text"
                       className="totalPrice"
                       id="totalPrice"
-                      placeholder="$00.00"
+                      placeholder="$0.00"
                       disabled
                     />
                     <input
@@ -227,33 +225,31 @@ const NewInvoiceForm = () => {
                     />
                   </div>
                 </div>
-                <label className="grandTotalLabel">
-                  Grand Total:{" "}
-                  <span id="grandTotal" className="grandTotalSpan">
-                    $0.00
-                  </span>
-                </label>
-                <input type="hidden" name="grandTotal" id="hiddenGrandTotal" />
-                <button
-                  type="button"
-                  name="button"
-                  className="btn btn-success"
-                  onClick={addNewItem}
-                >
-                  Add New Item
-                </button>
               </div>
+            </div>
+            <div>
+              <label className="grandTotalLabel">
+                Grand Total:{" "}
+                <span id="grandTotal" className="grandTotalSpan">
+                  $0.00
+                </span>
+              </label>
+              <input type="hidden" name="grandTotal" id="hiddenGrandTotal" />
+              <button
+                type="button"
+                name="button"
+                className="grandTotalButton"
+                onClick={addNewItem}
+              >
+                Add New Item
+              </button>
             </div>
 
             {/* TODO: Buttons in Footer */}
             <div className="buttonGroup">
               <Button type="button" value="Discard" onClick={closeModal} />
               <div>
-                <Button
-                  type="button"
-                  value="Save as Draft"
-                  onClick={showHello}
-                />
+                <Button type="button" value="Save as Draft" />
                 <Button type="submit" value="Save & Send" />
               </div>
             </div>
