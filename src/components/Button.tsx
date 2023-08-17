@@ -1,12 +1,11 @@
 interface ButtonProps {
-  type: "button" | "reset" | "submit" | undefind
   value: string
   onClick?: () => void
 }
 
-const Button: React.FC<ButtonProps> = ({ type, value, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ value, onClick }) => {
   return (
-    <button type={type} onClick={onClick}>
+    <button type="button" onClick={onClick}>
       {value}
     </button>
   )

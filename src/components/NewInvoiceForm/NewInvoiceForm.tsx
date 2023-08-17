@@ -247,10 +247,10 @@ const NewInvoiceForm = () => {
 
             {/* TODO: Buttons in Footer */}
             <div className="buttonGroup">
-              <Button type={button} value="Discard" onClick={closeModal} />
+              <Button value="Discard" onClick={closeModal} />
               <div>
-                <Button type={button} value="Save as Draft" />
-                <Button type={submit} value="Save & Send" />
+                <Button value="Save as Draft" />
+                <Button value="Save & Send" />
               </div>
             </div>
           </div>
