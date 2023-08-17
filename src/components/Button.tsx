@@ -1,5 +1,5 @@
 interface ButtonProps {
-  type: "button" | "reset" | "submit" | undefind | string
+  type: "button" | "reset" | "submit" | undefind
   value: string
   onClick?: () => void
 }
