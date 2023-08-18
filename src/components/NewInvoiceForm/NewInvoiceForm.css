@@ -98,8 +98,6 @@
   border-bottom-right-radius: 20px;
   z-index: 992;
 }
-.buttonGroup button {
-}
 .buttonGroup div {
   display: flex;
   gap: 1rem;

@@ -35,6 +35,17 @@ const NewInvoiceForm: React.FC = () => {
     clonedItemRow
       .querySelector(".price")
       .addEventListener("input", calculateTotal)
+
+    const newItem = {
+      itemName: "",
+      quantity: "",
+      price: "0",
+    }
+
+    setFormData((prevData) => ({
+      ...prevData,
+      items: [...prevData.items, newItem],
+    }))
   }
 
   // accessing the grand total using useRef
@@ -94,6 +105,27 @@ const NewInvoiceForm: React.FC = () => {
     grandTotal: "$0.00",
   })
 
+  // Handling the item changes
+  const handleItemChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const { name, value } = e.target
+
+    // Extract the field name and index from the input's name attribute
+    const fieldName = name.split(".")[1] // e.g., "itemName", "quantity", "price"
+
+    // Create a copy of the items array to update the specific item's data
+    const updatedItems = [...formData.items]
+    updatedItems[index][fieldName] = value
+
+    setFormData((prevData) => ({
+      ...prevData,
+      items: updatedItems,
+    }))
+  }
+
+  // Handling the input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prevData) => ({
@@ -268,46 +300,51 @@ const NewInvoiceForm: React.FC = () => {
               </div>
               {/* TODO: Item Row */}
               <div id="itemsContainer" className="itemsContainer">
-                <div className="item-row">
-                  <input
-                    type="text"
-                    name="item[]"
-                    placeholder="e.g. Banner"
-                    className="item"
-                    onInput={calculateTotal}
-                  />
-                  <input
-                    type="number"
-                    name="qty[]"
-                    placeholder="0"
-                    className="qty"
-                    onInput={calculateTotal}
-                  />
-                  <input
-                    type="number"
-                    name="price[]"
-                    className="price"
-                    placeholder="$00.0"
-                    onInput={calculateTotal}
-                  />
-                  <input
-                    type="text"
-                    className="totalPrice"
-                    id="totalPrice"
-                    placeholder="$0.00"
-                    disabled
-                  />
-                  <input
-                    type="hidden"
-                    name="totalPrice[]"
-                    id="hiddenTotalPrice"
-                  />
-                  <img
-                    src="images/delete_icon.svg"
-                    alt="delete icon"
-                    className="deleteIcon"
-                  />
-                </div>
+                {formData.items.map((item, index) => (
+                  <div className="item-row" key={index}>
+                    <input
+                      type="text"
+                      name={`item[${index}].itemName`}
+                      placeholder="e.g. Banner"
+                      className="item"
+                      onInput={calculateTotal}
+                      onChange={(e) => handleItemChange(e, index)}
+                    />
+                    <input
+                      type="number"
+                      name={`item[${index}].quantity`}
+                      placeholder="0"
+                      className="qty"
+                      onInput={calculateTotal}
+                      onChange={(e) => handleItemChange(e, index)}
+                    />
+                    <input
+                      type="number"
+                      name={`item[${index}].price`}
+                      className="price"
+                      placeholder="$00.0"
+                      onInput={calculateTotal}
+                      onChange={(e) => handleItemChange(e, index)}
+                    />
+                    <input
+                      type="text"
+                      className="totalPrice"
+                      id="totalPrice"
+                      placeholder="$0.00"
+                      disabled
+                    />
+                    <input
+                      type="hidden"
+                      name="totalPrice[]"
+                      id="hiddenTotalPrice"
+                    />
+                    <img
+                      src="images/delete_icon.svg"
+                      alt="delete icon"
+                      className="deleteIcon"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
