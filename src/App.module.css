@@ -16,6 +16,7 @@ button {
   font-weight: 700 !important;
   padding: 0.5rem 1.5rem;
 }
+
 /********* Scroll bar *******/
 ::-webkit-scrollbar {
   width: 10px; /* Adjust the width of the scrollbar track */

@@ -1,21 +1,22 @@
 .invoiceItem {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 30px;
+  justify-content: stretch;
+  align-content: center;
+  justify-items: start;
   align-items: center;
+  background-color: #fff;
   padding: 1rem 2rem;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
   margin-bottom: 1rem;
 }
+.invoiceItem > p {
+  text-align: left;
+}
 .invoiceItem:hover {
   cursor: pointer;
-}
-.firstSection {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
 }
 .invoiceId::before {
   content: "#";
@@ -28,20 +29,37 @@
 }
 .textLight {
   color: rgb(var(--clr-light-300));
+  font-weight: 600;
 }
-.secondSection {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-}
-.status::before {
+.statusPaid::before {
   content: url("./images/oval.svg");
   margin-right: 0.5rem;
 }
-.status {
+.statusPaid {
   background-color: rgba(var(--clr-status-paid), 0.2);
   padding: 0.3rem 0.7rem;
   border-radius: 6px;
   font-weight: 700;
   color: rgb(var(--clr-status-paid));
+}
+.statusPending::before {
+  content: url("./images/oval_pending.svg");
+  margin-right: 0.5rem;
+}
+.statusPending {
+  background-color: rgba(255, 145, 0, 0.1);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: rgba(255, 145, 0);
+}
+.rightArrowIcon {
+  border: 1px solid rgba(var(--clr-dark-100), 0.4);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-self: end;
 }

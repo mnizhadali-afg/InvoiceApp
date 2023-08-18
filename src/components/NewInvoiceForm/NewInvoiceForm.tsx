@@ -237,7 +237,7 @@ const NewInvoiceForm = () => {
               <button
                 type="button"
                 name="button"
-                className="grandTotalButton"
+                className="grandTotalButton btn-purple"
                 onClick={addNewItem}
               >
                 Add New Item
@@ -248,14 +248,18 @@ const NewInvoiceForm = () => {
             <div className="buttonGroup">
               <button
                 type="button"
-                className="discardButton"
+                className={`discardButton btn-gray`}
                 onClick={closeModal}
               >
                 Discard
               </button>
               <div>
-                <button type="button">Save as Draft</button>
-                <button type="reset">Save & Send</button>
+                <button className="btn-dark" type="button">
+                  Save as Draft
+                </button>
+                <button className="btn-danger" type="reset">
+                  Save & Send
+                </button>
               </div>
             </div>
           </div>

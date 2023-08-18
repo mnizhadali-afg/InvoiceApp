@@ -1,16 +1,25 @@
+import { useState } from "react"
 import styles from "./InvoiceItem.module.css"
 
-const InvoiceItem = () => {
+const InvoiceItem = ({ invoice }) => {
+  const [invoiceStatus, setInvoiceStatus] = useState(false)
+
+  const handleStatus = () => {
+    setInvoiceStatus((prevState) => !prevState)
+  }
   return (
     <div className={styles.invoiceItem}>
-      <div className={styles.firstSection}>
-        <p className={styles.invoiceId}>XYZ123</p>
-        <p className={styles.textLight}>Due 18 Aug 2021</p>
-        <p className={styles.textLight}>Jensen Huang</p>
+      <p className={styles.invoiceId}>XYZ123</p>
+      <p className={styles.textLight}>{invoice.billTo.clientName}</p>
+      <p className={styles.textLight}>{invoice.invoiceDate}</p>
+      <p className={styles.textBold}>${invoice.grandTotal}</p>
+      <div
+        className={invoiceStatus ? styles.statusPaid : styles.statusPending}
+        onClick={handleStatus}
+      >
+        {invoiceStatus ? "Paid" : "Pending"}
       </div>
-      <div className={styles.secondSection}>
-        <p className={styles.textBold}>$ 1,800.90</p>
-        <div className={styles.status}>Paid</div>
+      <div className={styles.rightArrowIcon}>
         <img src="./images/arrow_right.svg" alt="arrow right" />
       </div>
     </div>

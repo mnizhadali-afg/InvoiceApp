@@ -1,6 +1,8 @@
 import styles from "./Navbar.module.css"
 
-const Navbar = () => {
+const Navbar = ({ invoices }) => {
+  console.log(invoices)
+
   const showModal = () => {
     const invoiceForm = document.querySelector("#newInvoice") as HTMLElement
     if (invoiceForm) {
@@ -12,10 +14,15 @@ const Navbar = () => {
     <nav>
       <header>
         <h1>Invoices</h1>
-        {/* <p>No Invoices</p> */}
-        <p>
+        {invoices ? (
+          <p>There are {invoices} invoices in the system.</p>
+        ) : (
+          <p>No invoices yet.</p>
+        )}
+
+        {/* <p>
           <strong>The app is still under developemt 😎</strong>
-        </p>
+        </p> */}
       </header>
       <div className={styles.navRightSide}>
         <p className={styles.filterIcon}>
