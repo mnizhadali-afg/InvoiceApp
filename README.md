@@ -14,3 +14,4 @@ The following app is a simple invoice application created in React.js and TypeSc
 8. Work on the dark mode feature
 9. Responsiveness for mobile
 10. Set route for the logo to bring us on the main page
+11. Implement the Modal close button

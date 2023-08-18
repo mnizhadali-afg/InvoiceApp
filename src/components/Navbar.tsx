@@ -1,8 +1,6 @@
 import styles from "./Navbar.module.css"
 
 const Navbar = ({ invoices }) => {
-  console.log(invoices)
-
   const showModal = () => {
     const invoiceForm = document.querySelector("#newInvoice") as HTMLElement
     if (invoiceForm) {

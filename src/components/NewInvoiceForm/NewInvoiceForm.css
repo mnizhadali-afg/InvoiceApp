@@ -62,8 +62,20 @@
 .deleteIcon:hover {
   cursor: pointer;
 }
-.grandTotalButton {
+.addNewItemButton {
   width: 100%;
+}
+.grandTotalContainer label,
+.grandTotalContainer input {
+  all: unset;
+}
+.grandTotalContainer {
+  margin-block: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.grandTotalContainer {
+  display: flex;
 }
 .grandTotalLabel {
   margin-block: 1rem;

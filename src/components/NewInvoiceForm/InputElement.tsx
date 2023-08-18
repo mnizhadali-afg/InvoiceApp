@@ -5,7 +5,9 @@ interface InputElementProps {
   type: string
   name: string
   id: string
+  labelValue: string
   value: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const InputElement: React.FC<InputElementProps> = ({
@@ -13,12 +15,20 @@ const InputElement: React.FC<InputElementProps> = ({
   type,
   name,
   id,
+  labelValue,
   value,
+  onChange,
 }) => {
   return (
     <div className={styles.formElement}>
-      <label htmlFor={htmlFor}>{value}</label>
-      <input type={type} name={name} id={id} />
+      <label htmlFor={htmlFor}>{labelValue}</label>
+      <input
+        type={type}
+        value={value}
+        name={name}
+        id={id}
+        onChange={onChange}
+      />
     </div>
   )
 }
