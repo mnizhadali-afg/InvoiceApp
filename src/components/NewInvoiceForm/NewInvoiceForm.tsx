@@ -11,40 +11,9 @@ const NewInvoiceForm: React.FC = () => {
 
   // Create a new row for the invoice items
   const addNewItem = () => {
-    const itemsContainer = document.getElementById("itemsContainer")
-    const itemRow = document.querySelector(".item-row")
-
-    // Clone the first item row
-    const clonedItemRow = itemRow.cloneNode(true)
-
-    // Clear the values in the cloned input fields
-    clonedItemRow
-      .querySelectorAll("input")
-      .forEach((input) => (input.value = ""))
-
-    // Add the cloned item row to the container
-    itemsContainer.appendChild(clonedItemRow)
-
-    // Attach event listeners to the cloned input fields
-    clonedItemRow
-      .querySelector(".item")
-      .addEventListener("input", calculateTotal)
-    clonedItemRow
-      .querySelector(".qty")
-      .addEventListener("input", calculateTotal)
-    clonedItemRow
-      .querySelector(".price")
-      .addEventListener("input", calculateTotal)
-
-    const newItem = {
-      itemName: "",
-      quantity: "",
-      price: "0",
-    }
-
     setFormData((prevData) => ({
       ...prevData,
-      items: [...prevData.items, newItem],
+      items: [...prevData.items, { itemName: "", quantity: "", price: "0" }],
     }))
   }
 
@@ -76,7 +45,7 @@ const NewInvoiceForm: React.FC = () => {
     }
     setFormData((prevData) => ({
       ...prevData,
-      grandTotal: "$" + grandTotal.toFixed(2), // Update grandTotal in state
+      grandTotal: grandTotal.toFixed(2), // Update grandTotal in state
     }))
   }
 
@@ -102,7 +71,7 @@ const NewInvoiceForm: React.FC = () => {
         price: "0",
       },
     ],
-    grandTotal: "$0.00",
+    grandTotal: "0",
   })
 
   // Handling the item changes
@@ -307,7 +276,7 @@ const NewInvoiceForm: React.FC = () => {
                       name={`item[${index}].itemName`}
                       placeholder="e.g. Banner"
                       className="item"
-                      onInput={calculateTotal}
+                      // onInput={calculateTotal}
                       onChange={(e) => handleItemChange(e, index)}
                     />
                     <input
@@ -315,7 +284,7 @@ const NewInvoiceForm: React.FC = () => {
                       name={`item[${index}].quantity`}
                       placeholder="0"
                       className="qty"
-                      onInput={calculateTotal}
+                      // onInput={calculateTotal}
                       onChange={(e) => handleItemChange(e, index)}
                     />
                     <input
@@ -348,30 +317,29 @@ const NewInvoiceForm: React.FC = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div className="grandTotalContainer">
-              <label className="grandTotalLabel">
-                Grand Total:{" "}
-                <input
-                  id="grandTotal"
-                  className="grandTotalSpan"
-                  type="text"
-                  value={formData.grandTotal}
-                  ref={grandTotalInputRef}
-                  disabled
-                />
-              </label>
-              <input type="hidden" name="grandTotal" id="hiddenGrandTotal" />
-            </div>
-            <button
-              type="button"
-              name="button"
-              className="addNewItemButton btn-purple"
-              onClick={addNewItem}
-            >
-              Add New Item
-            </button>
+
+          <div className="grandTotalContainer">
+            <label className="grandTotalLabel">
+              Grand Total:{" "}
+              <input
+                id="grandTotal"
+                className="grandTotalSpan"
+                type="text"
+                value={`$` + formData.grandTotal}
+                ref={grandTotalInputRef}
+                disabled
+              />
+            </label>
+            <input type="hidden" name="grandTotal" id="hiddenGrandTotal" />
           </div>
+          <button
+            type="button"
+            name="button"
+            className="addNewItemButton btn-purple"
+            onClick={addNewItem}
+          >
+            Add New Item
+          </button>
 
           {/* TODO: Buttons in Footer */}
           <div className="buttonGroup">
