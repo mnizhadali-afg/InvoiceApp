@@ -2,7 +2,7 @@
 
 The following app is a simple invoice application created in React.js and TypeScript.
 
-## Features:
+## Features to be added:
 
 1. Add the form result to the JSON file
 2. Create a separate page for each invoice, using React Router
