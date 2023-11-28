@@ -105,9 +105,9 @@ const NewInvoiceForm: React.FC = () => {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-  }
 
-  console.log(formData)
+    console.log("Form Data: ", formData)
+  }
 
   return (
     <div id="newInvoice" className="newInvoiceFormModal">
@@ -351,10 +351,10 @@ const NewInvoiceForm: React.FC = () => {
               Discard
             </button>
             <div>
-              <button className="btn-dark" type="button">
+              <button className="btn-dark" type="submit">
                 Save as Draft
               </button>
-              <button className="btn-danger" type="reset">
+              <button className="btn-danger" type="submit">
                 Save & Send
               </button>
             </div>

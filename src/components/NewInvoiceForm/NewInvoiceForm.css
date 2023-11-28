@@ -40,6 +40,7 @@
 .dateTerms > * {
   width: 100%;
 }
+
 /* TODO: Item List Input Elements */
 #itemsContainer h3 {
   margin-top: 1rem;
@@ -85,6 +86,7 @@
 .grandTotalLabel span {
   font-weight: 700;
 }
+
 /* TODO: Footer Button Group */
 .buttonGroup {
   display: flex;
