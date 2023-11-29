@@ -1,16 +1,18 @@
 import { useState } from "react"
 import styles from "./InvoiceItem.module.css"
 
-interface InvoiceItem {
+interface Invoice {
   billTo: {
     clientName: string
+    // Other properties...
   }
-  invoiceDate: Date
+  invoiceDate: string
   grandTotal: number
+  // Other properties...
 }
 
 interface Props {
-  invoice: InvoiceItem
+  invoice: Invoice
 }
 
 const InvoiceItem: React.FC<Props> = ({ invoice }) => {
@@ -38,4 +40,5 @@ const InvoiceItem: React.FC<Props> = ({ invoice }) => {
     </div>
   )
 }
+
 export default InvoiceItem
