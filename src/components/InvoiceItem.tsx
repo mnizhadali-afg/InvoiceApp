@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./InvoiceItem.module.css"
 
-interface Invoice {
+interface InvoiceItem {
   billTo: {
     clientName: string
     // Other properties...
@@ -12,7 +12,7 @@ interface Invoice {
 }
 
 interface Props {
-  invoice: Invoice
+  invoice: InvoiceItem
 }
 
 const InvoiceItem: React.FC<Props> = ({ invoice }) => {
