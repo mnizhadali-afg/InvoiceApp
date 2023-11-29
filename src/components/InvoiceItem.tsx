@@ -1,12 +1,25 @@
 import { useState } from "react"
 import styles from "./InvoiceItem.module.css"
 
-const InvoiceItem = ({ invoice }) => {
+interface InvoiceItem {
+  billTo: {
+    clientName: string
+  }
+  invoiceDate: Date
+  grandTotal: number
+}
+
+interface Props {
+  invoice: InvoiceItem
+}
+
+const InvoiceItem: React.FC<Props> = ({ invoice }) => {
   const [invoiceStatus, setInvoiceStatus] = useState(false)
 
   const handleStatus = () => {
     setInvoiceStatus((prevState) => !prevState)
   }
+
   return (
     <div className={styles.invoiceItem}>
       <p className={styles.invoiceId}>XYZ123</p>
